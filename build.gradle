@@ -1,4 +1,13 @@
 
+/**
+ *
+ *  Bintray 平台也可以托管并且不需要频繁创建 缺点是初始准备阶段很麻烦不像 JitPack 简单，有利有弊吧
+ *
+ *  Bintray 配置详解： https://blog.csdn.net/Android_Study_OK/article/details/85283981
+ *
+ *
+ */
+
 buildscript {
     repositories {
         jcenter()
