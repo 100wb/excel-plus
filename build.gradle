@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+}
+
+group 'cn.100wb'
+
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+
+    compile fileTree(dir:'src/main/resources/libs', include:['*.jar'])
+
+//    compile files('src/main/resources/libs/poi-3.8-20120326.jar')
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+tasks.withType(GroovyCompile) {
+    groovyOptions.encoding = "MacRoman"
+}
+
+task "create-dirs" {
+    doLast{
+        sourceSets*.java.srcDirs*.each { it.mkdirs() }
+        sourceSets*.resources.srcDirs*.each { it.mkdirs() }
+    }
+}
